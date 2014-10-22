@@ -1,0 +1,201 @@
+﻿<Window x:Class="VoIP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:voIp="clr-namespace:VoIP"
+        Title="VoIP"
+        Height="350"
+        Width="300"
+        MinWidth="150"
+        MinHeight="200">
+    <Window.Resources>
+        <voIp:FontSizeConverter x:Key="FontSizeConverter"/>
+    </Window.Resources>
+
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save" InputGestureText="ALT+S" Click="OnSmsClicked"/>
+                <MenuItem Header="_Call" InputGestureText="ALT+C" Click="OnCallClicked"/>
+                <MenuItem Header="S_MS" InputGestureText="ALT+M" Click="OnSmsClicked"/>
+                <Separator/>
+                <MenuItem Header="_Exit" InputGestureText="Alt+E" Click="OnExitClicked"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Key binding" InputGestureText="ALT+K" Click="OnKeyHelpClicked"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox 
+                x:Name="NumberTextBox"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                TabIndex="1"
+                TextAlignment="Right"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="1"
+                Content="_1"
+                Grid.Column="0"
+                Grid.Row="1"
+                TabIndex="2"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="2"
+                Content="_2"
+                Grid.Column="1"
+                Grid.Row="1"
+                TabIndex="3"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="3"
+                Content="_3"
+                Grid.Column="2"
+                Grid.Row="1"
+                TabIndex="4"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="4"
+                Content="_4"
+                Grid.Column="0"
+                Grid.Row="2"
+                TabIndex="5"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="5"
+                Content="_5"
+                Grid.Column="1"
+                Grid.Row="2"
+                TabIndex="6"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="6"
+                Content="_6"
+                Grid.Column="2"
+                Grid.Row="2"
+                TabIndex="7"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="7"
+                Content="_7"
+                Grid.Column="0"
+                Grid.Row="3"
+                TabIndex="8"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="8"
+                Content="_8"
+                Grid.Column="1"
+                Grid.Row="3"
+                TabIndex="9"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="9"
+                Content="_9"
+                Grid.Column="2"
+                Grid.Row="3"
+                TabIndex="10"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="*"
+                Content="_*"
+                Grid.Column="0"
+                Grid.Row="4"
+                TabIndex="11"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="0"
+                Content="_0"
+                Grid.Column="1"
+                Grid.Row="4"
+                TabIndex="12"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnNumberClicked"
+                Tag="#"
+                Content="_#"
+                Grid.Column="2"
+                Grid.Row="4"
+                TabIndex="13"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnSaveClicked"
+                Content="_Save"
+                Grid.Column="0"
+                Grid.Row="5"
+                TabIndex="14"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnCallClicked"
+                Content="_Call"
+                Grid.Column="1"
+                Grid.Row="5"
+                TabIndex="15"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+
+            <Button
+                Click="OnSmsClicked"
+                Content="S_MS"
+                Grid.Column="2"
+                Grid.Row="5"
+                TabIndex="16"
+                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
+                />
+        </Grid>
+    </DockPanel>
+</Window>

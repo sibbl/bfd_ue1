@@ -1,0 +1,28 @@
+﻿<Window x:Class="VoIP.CallWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:voIp="clr-namespace:VoIP"
+        Title="CallWindow" Height="300" Width="300">
+    <Window.Resources>
+        <voIp:FontSizeConverter x:Key="FontSizeConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Row="0">
+            <TextBlock>
+                <Run Text="Calling "/><Run x:Name="PhoneNumberTextBlock" /><Run Text="..."></Run>
+            </TextBlock>
+        </Viewbox>
+
+        <Viewbox Grid.Row="1">
+            <Button
+                Content="_Hang up"
+                Click="OnHangUpCall"
+                />
+        </Viewbox>
+    </Grid>
+</Window>
