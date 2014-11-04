@@ -101,6 +101,7 @@ namespace VoIP
             {
                 _smsWindow = new SmsWindow();
                 _smsWindow.Closed += (o, args) => { _smsWindow = null; };
+                _smsWindow.SetNumber(NumberTextBox.Text);
                 _smsWindow.ShowDialog();
             }
         }

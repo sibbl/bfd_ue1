@@ -34,10 +34,5 @@ namespace VoIP
         {
             PhoneNumberTextBlock.Text = number;
         }
-
-        private void OnHangUpCall(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
     }
 }

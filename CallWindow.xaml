@@ -19,7 +19,7 @@
             Grid.Row="1"
             x:Name="HangUpButton"
             Content="_Hang up"
-            Click="OnHangUpCall"
+            IsCancel="True"
             />
     </Grid>
 </Window>
