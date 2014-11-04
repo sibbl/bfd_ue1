@@ -28,6 +28,9 @@ namespace VoIP
                 HangUpButton,
                 CallingTextBlock
             });
+
+
+            //TODO: akustische Signale beim Anrufen ausgeben
         }
 
         public void SetNumber(string number)

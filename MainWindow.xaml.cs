@@ -109,6 +109,7 @@ namespace VoIP
             {
                 NumberTextBox.Undo();
             }
+            //TODO: akustische Signale bei Eingabe von Nummer ausgeben 
         }
     }
 }
