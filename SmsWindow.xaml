@@ -60,7 +60,7 @@
                 Margin="1"
                 TabIndex="3"
                 x:Name="SendButton"
-                Content="_Send" IsDefault="True"/>
+                Content="_Send" IsDefault="True" Click="SendButton_Click"/>
             <Button 
                 x:Name="CancelButton"
                 Grid.Column="1"

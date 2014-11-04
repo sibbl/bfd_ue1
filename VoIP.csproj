@@ -63,6 +63,7 @@
     <Compile Include="SmsWindow.xaml.cs">
       <DependentUpon>SmsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
     <Page Include="CallWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

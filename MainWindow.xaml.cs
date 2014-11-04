@@ -44,11 +44,6 @@ namespace VoIP
             });
         }
 
-        private bool ValidatePhoneNumber(string number)
-        {
-            return !String.IsNullOrWhiteSpace(number);
-        }
-
         private void OnNumberClicked(object sender, RoutedEventArgs e)
         {
             if (sender is Button)
@@ -60,10 +55,8 @@ namespace VoIP
 
         private void OnCallClicked(object sender, RoutedEventArgs e)
         {
-            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
-                MessageBox.Show("Please enter a valid phone number!", "Invalid phone number",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (_callWindow == null)
@@ -76,10 +69,8 @@ namespace VoIP
         }
         private void OnSaveClicked(object sender, RoutedEventArgs e)
         {
-            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
-                MessageBox.Show("Please enter a valid phone number!", "Invalid phone number",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (_saveWindow == null)
@@ -91,10 +82,8 @@ namespace VoIP
         }
         private void OnSmsClicked(object sender, RoutedEventArgs e)
         {
-            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
-                MessageBox.Show("Please enter a valid phone number!", "Invalid phone number",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (_smsWindow == null)
