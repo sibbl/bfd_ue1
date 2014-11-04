@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,6 +15,8 @@ namespace VoIP
         private SmsWindow _smsWindow;
         private SaveWindow _saveWindow;
         private CallWindow _callWindow;
+
+        private SoundPlayer _buttonSound;
 
         public MainWindow()
         {
@@ -42,6 +46,8 @@ namespace VoIP
                 DialButtonSms,
                 DialButtonCall
             });
+
+            _buttonSound = new SoundPlayer(Properties.Resources.ButtonSound);
         }
 
         private void OnNumberClicked(object sender, RoutedEventArgs e)
@@ -50,6 +56,7 @@ namespace VoIP
             {
                 var btn = sender as Button;
                 NumberTextBox.Text += btn.Tag;
+                _buttonSound.Play();
             }
         }
 
@@ -138,7 +145,6 @@ namespace VoIP
                         break;
                 }
             }
-            //TODO: akustische Signale bei Eingabe von Nummer ausgeben 
         }
     }
 }

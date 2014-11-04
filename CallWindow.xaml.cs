@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace VoIP
     /// </summary>
     public partial class CallWindow : Window
     {
+        private SoundPlayer _dialingSound;
         public CallWindow()
         {
             InitializeComponent();
@@ -30,7 +32,9 @@ namespace VoIP
             });
 
 
-            //TODO: akustische Signale beim Anrufen ausgeben
+            _dialingSound = new SoundPlayer(Properties.Resources.DialingSound);
+            Closing += (sender, args) => _dialingSound.Stop();
+            Loaded += (sender, args) => _dialingSound.PlayLooping();
         }
 
         public void SetNumber(string number)
