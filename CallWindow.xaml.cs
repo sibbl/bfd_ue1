@@ -22,6 +22,12 @@ namespace VoIP
         public CallWindow()
         {
             InitializeComponent();
+
+            FontSizeHelper.Initialize(new FrameworkElement[]
+            {
+                HangUpButton,
+                CallingTextBlock
+            });
         }
 
         public void SetNumber(string number)

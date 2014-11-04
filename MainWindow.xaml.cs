@@ -33,6 +33,25 @@ namespace VoIP
                 if (_saveWindow != null) _saveWindow.Close();
                 if (_callWindow != null) _callWindow.Close();
             };
+            FontSizeHelper.Initialize(new FrameworkElement[]
+            {
+                NumberTextBox,
+                DialButton0,
+                DialButton1,
+                DialButton2,
+                DialButton3,
+                DialButton4,
+                DialButton5,
+                DialButton6,
+                DialButton7,
+                DialButton8,
+                DialButton9,
+                DialButtonStar,
+                DialButtonHash,
+                DialButtonSave,
+                DialButtonSms,
+                DialButtonCall
+            });
         }
 
         private void OnNumberClicked(object sender, RoutedEventArgs e)

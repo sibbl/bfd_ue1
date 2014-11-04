@@ -7,11 +7,7 @@
         Width="300"
         MinWidth="150"
         MinHeight="200">
-    <Window.Resources>
-        <voIp:FontSizeConverter x:Key="FontSizeConverter"/>
-    </Window.Resources>
 
-    
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
@@ -46,155 +42,168 @@
                 Grid.ColumnSpan="3"
                 Grid.Row="0"
                 TabIndex="1"
-                TextAlignment="Right"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton1"
                 Click="OnNumberClicked"
                 Tag="1"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_1"
                 Grid.Column="0"
                 Grid.Row="1"
                 TabIndex="2"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton2"
                 Click="OnNumberClicked"
                 Tag="2"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_2"
                 Grid.Column="1"
                 Grid.Row="1"
                 TabIndex="3"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton3"
                 Click="OnNumberClicked"
                 Tag="3"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_3"
                 Grid.Column="2"
                 Grid.Row="1"
                 TabIndex="4"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton4"
                 Click="OnNumberClicked"
                 Tag="4"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_4"
                 Grid.Column="0"
                 Grid.Row="2"
                 TabIndex="5"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton5"
                 Click="OnNumberClicked"
                 Tag="5"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_5"
                 Grid.Column="1"
                 Grid.Row="2"
                 TabIndex="6"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton6"
                 Click="OnNumberClicked"
                 Tag="6"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_6"
                 Grid.Column="2"
                 Grid.Row="2"
                 TabIndex="7"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton7"
                 Click="OnNumberClicked"
                 Tag="7"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_7"
                 Grid.Column="0"
                 Grid.Row="3"
                 TabIndex="8"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton8"
                 Click="OnNumberClicked"
                 Tag="8"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_8"
                 Grid.Column="1"
                 Grid.Row="3"
                 TabIndex="9"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton9"
                 Click="OnNumberClicked"
                 Tag="9"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_9"
                 Grid.Column="2"
                 Grid.Row="3"
                 TabIndex="10"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButtonStar"
                 Click="OnNumberClicked"
                 Tag="*"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_*"
                 Grid.Column="0"
                 Grid.Row="4"
                 TabIndex="11"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButton0"
                 Click="OnNumberClicked"
                 Tag="0"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_0"
                 Grid.Column="1"
                 Grid.Row="4"
                 TabIndex="12"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButtonHash"
                 Click="OnNumberClicked"
                 Tag="#"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_#"
                 Grid.Column="2"
                 Grid.Row="4"
                 TabIndex="13"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButtonSave"
                 Click="OnSaveClicked"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_Save"
                 Grid.Column="0"
                 Grid.Row="5"
                 TabIndex="14"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButtonCall"
                 Click="OnCallClicked"
+                Style="{StaticResource DialButtonStyle}"
                 Content="_Call"
                 Grid.Column="1"
                 Grid.Row="5"
                 TabIndex="15"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
 
             <Button
+                x:Name="DialButtonSms"
                 Click="OnSmsClicked"
+                Style="{StaticResource DialButtonStyle}"
                 Content="S_MS"
                 Grid.Column="2"
                 Grid.Row="5"
                 TabIndex="16"
-                FontSize="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}, Converter={StaticResource FontSizeConverter}}"
                 />
         </Grid>
     </DockPanel>
