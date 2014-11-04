@@ -81,7 +81,7 @@ namespace VoIP
                 _callWindow = new CallWindow();
                 _callWindow.Closed += (o, args) => { _callWindow = null; };
                 _callWindow.SetNumber(NumberTextBox.Text);
-                _callWindow.Show();
+                _callWindow.ShowDialog();
             }
         }
         private void OnSaveClicked(object sender, RoutedEventArgs e)
@@ -96,7 +96,7 @@ namespace VoIP
             {
                 _saveWindow = new SaveWindow();
                 _saveWindow.Closed += (o, args) => { _saveWindow = null; };
-                _saveWindow.Show();
+                _saveWindow.ShowDialog();
             }
         }
         private void OnSmsClicked(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ namespace VoIP
             {
                 _smsWindow = new SmsWindow();
                 _smsWindow.Closed += (o, args) => { _smsWindow = null; };
-                _smsWindow.Show();
+                _smsWindow.ShowDialog();
             }
         }
         private void OnExitClicked(object sender, RoutedEventArgs e)
