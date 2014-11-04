@@ -54,6 +54,11 @@ namespace VoIP
             });
         }
 
+        private bool ValidatePhoneNumber(string number)
+        {
+            return String.IsNullOrWhiteSpace(number);
+        }
+
         private void OnNumberClicked(object sender, RoutedEventArgs e)
         {
             if (sender is Button)
@@ -65,6 +70,12 @@ namespace VoIP
 
         private void OnCallClicked(object sender, RoutedEventArgs e)
         {
+            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            {
+                MessageBox.Show("Bitte geben Sie eine gültige Telefonnummer ein!", "Ungültige Nummer",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (_callWindow == null)
             {
                 _callWindow = new CallWindow();
@@ -75,6 +86,12 @@ namespace VoIP
         }
         private void OnSaveClicked(object sender, RoutedEventArgs e)
         {
+            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            {
+                MessageBox.Show("Bitte geben Sie eine gültige Telefonnummer ein!", "Ungültige Nummer",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (_saveWindow == null)
             {
                 _saveWindow = new SaveWindow();
@@ -84,6 +101,12 @@ namespace VoIP
         }
         private void OnSmsClicked(object sender, RoutedEventArgs e)
         {
+            if (!ValidatePhoneNumber(NumberTextBox.Text))
+            {
+                MessageBox.Show("Bitte geben Sie eine gültige Telefonnummer ein!", "Ungültige Nummer",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             if (_smsWindow == null)
             {
                 _smsWindow = new SmsWindow();
