@@ -122,5 +122,13 @@ namespace VoIP
         {
             MessageBox.Show("You can use the following key strokes:\n\n1 to 9    Type number\nALT+S   Save number\nAlt+C    Call number\nAlt+M   Send SMS to number\nAlt+E     Exit application", "Available shortcuts");
         }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!NumberTextBox.IsFocused && e.Key == Key.Back)
+            {
+                NumberTextBox.Undo();
+            }
+        }
     }
 }
