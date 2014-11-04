@@ -56,7 +56,7 @@ namespace VoIP
 
         private bool ValidatePhoneNumber(string number)
         {
-            return String.IsNullOrWhiteSpace(number);
+            return !String.IsNullOrWhiteSpace(number);
         }
 
         private void OnNumberClicked(object sender, RoutedEventArgs e)
