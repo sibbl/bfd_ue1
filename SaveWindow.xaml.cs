@@ -22,6 +22,40 @@ namespace VoIP
         public SaveWindow()
         {
             InitializeComponent();
+
+            FontSizeHelper.Initialize(new FrameworkElement[]
+            {
+                PhoneNumberTextBox,
+                PhoneNumberLabel,
+                NameTextBox,
+                NameLabel,
+                StreetTextBox,
+                StreetLabel,
+                ZipCodeTextBox,
+                ZipCodeLabel,
+                CityTextBox,
+                CityLabel,
+                EmailTextBox,
+                EmailLabel,
+                CancelButton,
+                SaveButton,
+            });
+        }
+
+        public void SetNumber(string number)
+        {
+            PhoneNumberTextBox.Text = number;
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Validator.ValidatePhoneNumber(PhoneNumberTextBox.Text))
+            {
+                return;
+            }
+            MessageBox.Show("The contact was successfully save.", "Contact saved", MessageBoxButton.OK,
+                MessageBoxImage.Information);
+            Close();
         }
     }
 }

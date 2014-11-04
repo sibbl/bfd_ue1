@@ -3,6 +3,129 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Save contact..." Height="300" Width="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label
+            x:Name="PhoneNumberLabel"
+            Content="_Phone:"
+            Target="{Binding ElementName=PhoneNumberTextBox}"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="PhoneNumberTextBox"
+            Grid.Row="0"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="1"/>
+        <Label
+            x:Name="NameLabel"
+            Content="_Name:"
+            Target="{Binding ElementName=NameTextBox}"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="NameTextBox"
+            Grid.Row="1"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="2"/>
+        <Label
+            x:Name="StreetLabel"
+            Content="S_treet:"
+            Target="{Binding ElementName=StreetTextBox}"
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="StreetTextBox"
+            Grid.Row="2"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="3"/>
+        <Label
+            x:Name="ZipCodeLabel"
+            Content="_Zip code:"
+            Target="{Binding ElementName=ZipCodeTextBox}"
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="ZipCodeTextBox"
+            Grid.Row="3"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="4"/>
+        <Label
+            x:Name="CityLabel"
+            Content="C_ity:"
+            Target="{Binding ElementName=CityTextBox}"
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="CityTextBox"
+            Grid.Row="4"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="5"/>
+        <Label
+            x:Name="EmailLabel"
+            Content="_E-mail:"
+            Target="{Binding ElementName=EmailTextBox}"
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="2"
+            />
+        <TextBox
+            x:Name="EmailTextBox"
+            Grid.Row="5"
+            Margin="2"
+            Grid.Column="1"
+            TabIndex="6"/>
+
+        <Grid
+            Margin="2"
+            Grid.Column="1"
+            Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button 
+                Grid.Column="0"
+                Margin="1"
+                TabIndex="7"
+                x:Name="SaveButton"
+                Content="_Save"
+                IsDefault="True"
+                Click="SaveButton_Click"/>
+            <Button 
+                x:Name="CancelButton"
+                Grid.Column="1"
+                Margin="1"
+                TabIndex="8"
+                Content="_Cancel"
+                IsCancel="True"/>
+        </Grid>
     </Grid>
 </Window>

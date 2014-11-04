@@ -35,6 +35,7 @@ namespace VoIP
             }
             MessageBox.Show("The message was successfully sent.", "Message sent", MessageBoxButton.OK,
                 MessageBoxImage.Information);
+            Close();
         }
     }
 }

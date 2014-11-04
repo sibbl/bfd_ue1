@@ -80,14 +80,11 @@ namespace VoIP
 
         private void InitiateSave()
         {
-            if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
-            {
-                return;
-            }
             if (_saveWindow == null)
             {
                 _saveWindow = new SaveWindow();
                 _saveWindow.Closed += (o, args) => { _saveWindow = null; };
+                _saveWindow.SetNumber(NumberTextBox.Text);
                 _saveWindow.ShowDialog();
             }
         }
@@ -99,10 +96,6 @@ namespace VoIP
 
         private void InitiateSms()
         {
-            if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
-            {
-                return;
-            }
             if (_smsWindow == null)
             {
                 _smsWindow = new SmsWindow();
