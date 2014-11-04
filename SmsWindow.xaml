@@ -25,6 +25,7 @@
             Margin="2"
             />
         <TextBox
+            AutomationProperties.Name="Phone number Eingabefeld"
             x:Name="NumberTextBox"
             Grid.Row="0"
             Margin="2"
@@ -39,6 +40,7 @@
             Target="{Binding ElementName=MessageTextBox}"
             />
         <TextBox
+            AutomationProperties.Name="Message Eingabefeld"
             Grid.Column="1"
             Grid.Row="1"
             Margin="2"
@@ -60,12 +62,16 @@
                 Margin="1"
                 TabIndex="3"
                 x:Name="SendButton"
-                Content="_Send" IsDefault="True" Click="SendButton_Click"/>
+                AutomationProperties.Name="Senden Schalter"
+                Content="_Send"
+                IsDefault="True"
+                Click="SendButton_Click"/>
             <Button 
                 x:Name="CancelButton"
                 Grid.Column="1"
                 Margin="1"
                 TabIndex="4"
+                AutomationProperties.Name="Abbrechen Schalter"
                 Content="_Cancel"
                 IsCancel="True"/>
         </Grid>
