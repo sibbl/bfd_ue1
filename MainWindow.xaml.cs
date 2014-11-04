@@ -55,6 +55,11 @@ namespace VoIP
 
         private void OnCallClicked(object sender, RoutedEventArgs e)
         {
+            InitiateCall();
+        }
+
+        private void InitiateCall()
+        {
             if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
                 return;
@@ -67,7 +72,13 @@ namespace VoIP
                 _callWindow.ShowDialog();
             }
         }
+
         private void OnSaveClicked(object sender, RoutedEventArgs e)
+        {
+            InitiateSave();
+        }
+
+        private void InitiateSave()
         {
             if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
@@ -80,7 +91,13 @@ namespace VoIP
                 _saveWindow.ShowDialog();
             }
         }
+
         private void OnSmsClicked(object sender, RoutedEventArgs e)
+        {
+            InitiateSms();
+        }
+
+        private void InitiateSms()
         {
             if (!Validator.ValidatePhoneNumber(NumberTextBox.Text))
             {
@@ -94,13 +111,14 @@ namespace VoIP
                 _smsWindow.ShowDialog();
             }
         }
+
         private void OnExitClicked(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
         private void OnKeyHelpClicked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You can use the following key strokes:\n\n1 to 9    Type number\nALT+S   Save number\nAlt+C    Call number\nAlt+M   Send SMS to number\nAlt+E     Exit application", "Available shortcuts");
+            MessageBox.Show("You can use the following key strokes:\n\nCTRL+1  Save number\nCTRL+2  Call number\nCTRL+3  Send SMS to number", "Available shortcuts");
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
@@ -108,6 +126,24 @@ namespace VoIP
             if (!NumberTextBox.IsFocused && e.Key == Key.Back)
             {
                 NumberTextBox.Undo();
+            }
+            else if ((Keyboard.Modifiers & ModifierKeys.Control) != 0)
+            {
+                switch (e.Key)
+                {
+                    case Key.D1:
+                    case Key.NumPad1:
+                        InitiateSave();
+                        break;
+                    case Key.D2:
+                    case Key.NumPad2:
+                        InitiateCall();
+                        break;
+                    case Key.D3:
+                    case Key.NumPad3:
+                        InitiateSms();
+                        break;
+                }
             }
             //TODO: akustische Signale bei Eingabe von Nummer ausgeben 
         }
