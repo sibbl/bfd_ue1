@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace VoIP
@@ -15,7 +10,7 @@ namespace VoIP
             foreach (var element in controlsToResize)
             {
                 var scopeElement = element;
-                scopeElement.SizeChanged += (sender, args) => RecalcFontSize(scopeElement);
+                scopeElement.SizeChanged += (sender, args) => RecalcFontSize(scopeElement, args);
                 RecalcFontSize(scopeElement);
             }
         }
@@ -43,23 +38,41 @@ namespace VoIP
             }
         }
 
-        private static void RecalcFontSize(FrameworkElement element)
+        private static void RecalcFontSize(FrameworkElement element, SizeChangedEventArgs args = null)
         {
             if (element == null) return;
             var constraint = new Size(element.ActualWidth, element.ActualHeight);
             element.Measure(constraint);
 
-            while (element.DesiredSize.Height > element.ActualHeight || element.DesiredSize.Width > element.ActualWidth)
+             
+            if (args == null || !(element is Button))
             {
-                SetFontSizeRelative(element, -1);
-                element.Measure(constraint);
+                while (element.DesiredSize.Height < element.ActualHeight &&
+                       element.DesiredSize.Width < element.ActualWidth)
+                {
+                    SetFontSizeRelative(element, 1);
+                    element.Measure(constraint);
+                }
+            }
+            else
+            {
+                if (args.NewSize.Width < args.PreviousSize.Width || args.NewSize.Height < args.PreviousSize.Height)
+                {
+                    while (element.DesiredSize.Height >= element.ActualHeight ||
+                           element.DesiredSize.Width >= element.ActualWidth)
+                    {
+                        SetFontSizeRelative(element, -1);
+                        element.Measure(constraint);
+                    }
+                }
+                while (element.DesiredSize.Height < element.ActualHeight &&
+                       element.DesiredSize.Width < element.ActualWidth)
+                {
+                    SetFontSizeRelative(element, 1);
+                    element.Measure(constraint);
+                }
             }
 
-            while (element.DesiredSize.Height < element.ActualHeight && element.DesiredSize.Width < element.ActualWidth)
-            {
-                SetFontSizeRelative(element, 1);
-                element.Measure(constraint);
-            }
             SetFontSizeRelative(element, -1);
         }
     }
